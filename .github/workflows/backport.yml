@@ -12,7 +12,8 @@ on:
 # the GitHub repository. This means that it should not evaluate user input in a
 # way that allows code injection.
 
-permissions: {}
+permissions:
+  pull-requests: write
 
 jobs:
   backport:

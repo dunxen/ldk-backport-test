@@ -1,3 +1,3 @@
 # Contributing
 
-Do things
+Do things and stuff

@@ -5,7 +5,7 @@
 name: Backport
 on:
   pull_request_target:
-    types: [closed, labeled]
+    types: [labeled]
 
 # WARNING:
 # When extending this action, be aware that $GITHUB_TOKEN allows write access to
@@ -17,7 +17,7 @@ permissions: {}
 jobs:
   backport:
     name: Backport Pull Request
-    if: github.repository_owner == 'dunxen' && github.event.pull_request.merged == true && (github.event_name != 'labeled' || startsWith('backport', github.event.label.name))
+    if: github.repository_owner == 'dunxen' && github.event.pull_request.merged == true && startsWith('backport', github.event.label.name)
     runs-on: ubuntu-24.04
     steps:
       # TODO: Use a GitHub App to create the PR so that CI gets triggered
